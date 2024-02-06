@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://d3fa3nmcsa7al"]
+
+[ext_resource type="Texture2D" uid="uid://cjpt6yoqeh1ps" path="res://plamftorm.png" id="1_iavf6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f5xtr"]
+size = Vector2(128, 128)
+
+[node name="StaticBody2D" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1.52588e-05, -3.8147e-06)
+scale = Vector2(0.180791, 0.474074)
+texture = ExtResource("1_iavf6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_f5xtr")
