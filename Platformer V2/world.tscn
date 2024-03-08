@@ -1,0 +1,42 @@
+[gd_scene load_steps=5 format=3 uid="uid://dms5ppni83xje"]
+
+[ext_resource type="Texture2D" uid="uid://dgblir0jp2sgl" path="res://oak_woods_v1.0/background/background_layer_1.png" id="1_hlnhy"]
+[ext_resource type="PackedScene" uid="uid://dv75hglipe50w" path="res://flat_platform.tscn" id="2_qf5nl"]
+[ext_resource type="PackedScene" uid="uid://dmyb3g1i3iuju" path="res://player.tscn" id="3_fxy5g"]
+[ext_resource type="PackedScene" uid="uid://bpqeibeoxg3ou" path="res://wall.tscn" id="4_jeu85"]
+
+[node name="World" type="Node2D"]
+
+[node name="BackgroundLayer1" type="Sprite2D" parent="."]
+position = Vector2(576, 324)
+scale = Vector2(3.6, 3.6)
+texture = ExtResource("1_hlnhy")
+
+[node name="Flat platform" parent="." instance=ExtResource("2_qf5nl")]
+position = Vector2(120, 576)
+
+[node name="Flat platform2" parent="Flat platform" instance=ExtResource("2_qf5nl")]
+position = Vector2(128, -16)
+scale = Vector2(1, 1)
+
+[node name="Flat platform4" parent="Flat platform" instance=ExtResource("2_qf5nl")]
+position = Vector2(296, 0)
+scale = Vector2(1, 1)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Flat platform"]
+offset_left = -40.0
+offset_top = -192.0
+offset_right = 152.0
+offset_bottom = -96.0
+text = "Arrows to move
+Space to jump"
+metadata/_edit_use_anchors_ = true
+
+[node name="Player" parent="." instance=ExtResource("3_fxy5g")]
+position = Vector2(64, 456)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(576, 328)
+
+[node name="wall" parent="." instance=ExtResource("4_jeu85")]
+position = Vector2(728, 352)

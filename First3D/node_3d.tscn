@@ -1,0 +1,66 @@
+[gd_scene load_steps=7 format=3 uid="uid://rrmm2enc5vdx"]
+
+[ext_resource type="ArrayMesh" uid="uid://c45kvx8h4c37o" path="res://Animals_Pack/OBJ/Giraffe.obj" id="1_6cqin"]
+[ext_resource type="ArrayMesh" uid="uid://bhcxxkk5v6a11" path="res://Animals_Pack/OBJ/Bunny.obj" id="1_albhy"]
+[ext_resource type="ArrayMesh" uid="uid://de8qj3jwqyhtj" path="res://Animals_Pack/OBJ/Bear.obj" id="1_lls55"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_pbo58"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3ngv8"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_y1h1u"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="RigidBody3D" type="RigidBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.58394, 0)
+gravity_scale = 0.0
+freeze = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D"]
+transform = Transform3D(7.20818, 0, 0, 0, 1, 0, 0, 0, 8.09429, 0, 0, 0)
+lod_bias = 0.001
+mesh = SubResource("BoxMesh_pbo58")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
+transform = Transform3D(10.1871, 0, 0, 0, 1, 0, 0, 0, 9.30183, 0, 0, 0)
+shape = SubResource("BoxShape3D_3ngv8")
+
+[node name="RigidBody3D2" type="RigidBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.9998, -0.0199827, 0, 0.0199827, 0.9998, -0.511673, 3.06982, 0.105835)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D2"]
+shape = SubResource("BoxShape3D_3ngv8")
+
+[node name="Giraffe" type="MeshInstance3D" parent="RigidBody3D2/CollisionShape3D"]
+transform = Transform3D(1, 0, 0, 0, 0.19577, -9.31323e-09, 0, -4.65661e-10, 0.45769, 0, 0.123101, -0.00246037)
+mesh = ExtResource("1_6cqin")
+skeleton = NodePath("../../..")
+
+[node name="RigidBody3D3" type="RigidBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.318227, 1.86723, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D3"]
+shape = SubResource("BoxShape3D_3ngv8")
+
+[node name="Bunny" type="MeshInstance3D" parent="RigidBody3D3"]
+transform = Transform3D(0.320717, 0, 0, 0, 0.163547, 0, 0, 0, 0.308898, 0, 0, 0)
+mesh = ExtResource("1_albhy")
+skeleton = NodePath("../..")
+
+[node name="RigidBody3D4" type="RigidBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0792, 4.12823, 0.346993)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D4"]
+transform = Transform3D(1.35175, 0, 0, 0, -0.00796259, -1.61959, 0, 1.00488, -0.0128336, 0, 0, 0)
+shape = SubResource("CylinderShape3D_y1h1u")
+
+[node name="Bear" type="MeshInstance3D" parent="RigidBody3D4"]
+mesh = ExtResource("1_lls55")
+skeleton = NodePath("../..")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.947596, 0.319472, 0, -0.319472, 0.947596, 0, 2.75561, 3.43966)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -0.0155153, 0.99988, 0, -0.99988, -0.0155153, 0, 8.50866, 0)

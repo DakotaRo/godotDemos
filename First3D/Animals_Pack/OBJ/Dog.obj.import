@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://ko1epl3hqkc8"
+path="res://.godot/imported/Dog.obj-851a44e19760a0fdf79561b0c3f805df.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Dog.obj-851a44e19760a0fdf79561b0c3f805df.mesh"]
+
+source_file="res://Animals_Pack/OBJ/Dog.obj"
+dest_files=["res://.godot/imported/Dog.obj-851a44e19760a0fdf79561b0c3f805df.mesh", "res://.godot/imported/Dog.obj-851a44e19760a0fdf79561b0c3f805df.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
